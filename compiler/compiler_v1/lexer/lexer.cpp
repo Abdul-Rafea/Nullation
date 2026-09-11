@@ -1,31 +1,14 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-
 
 // Custom Header Files
 #include "lexer.h"
 
-std::vector<Token> lexer(std::string file_name) {
-    //Open File
-    std::ifstream file(file_name);
+Lexer::Lexer(const std::string& fileName, std::vector<Error>& Errors) 
+    : errors(Errors) {
 
-    // Does File Exists
+    std::ifstream file(fileName);
+
     if(!file.is_open()) {
-        std::cout << "Incorrect File Name";
-        return;
-    }
-
-    while(!file.eof()) {
-        Token token;
-
-        file >> token.value;
-
-        // Check For Reserved Words
-        for(int i = 0; i < RESERVED_WORDS.size(); i++) {
-            if(token.value == RESERVED_WORDS.at(i)) {
-                
-            }
-        }
+        Error error(ErrorCode::FIlENAME_ERROR, "Cannot open this file, wrong filename or directory");
+        errors.push_back(error);
     }
 }
