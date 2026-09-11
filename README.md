@@ -1,5 +1,5 @@
 # Nullation 
-> Current Version: `v0.0.1`
+> Current Version: `v0.1.0`
 
 One programming langauge for eveything.
 
