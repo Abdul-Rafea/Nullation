@@ -2,7 +2,7 @@
 /*
 
 # Ony Allow
-!.gitignore
-!src/
 !compiler/
+!src/
+!.gitignore
 !README.md
